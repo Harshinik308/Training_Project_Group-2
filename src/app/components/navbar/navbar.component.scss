@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(255, 255, 255,0.5);
+    height: 60px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.right,.left{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:20px
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+a:hover{
+    text-decoration: underline;
+}

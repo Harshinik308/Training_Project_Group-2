@@ -1,0 +1,35 @@
+<div class="table">
+    <p-table [columns]="cols" [value]="products" [tableStyle]="{ 'min-width': '50rem' }" class="p-table">
+        <ng-template pTemplate="header" let-columns>
+            <tr >
+                <th *ngFor="let col of headers" class="header">
+                    {{col}}
+                </th>
+                <th class="header">Add Testcases</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr class="data"> 
+                <td *ngFor="let col of columns" (click)="openDashboard(rowData['id'])">
+                    {{rowData[col]}}
+                </td>
+                <td>
+                    <button type='button'pButton pRipple class="p-button-text p-button-rounded" [icon]="'pi pi-plus'" (click)="showDialog()"></button>
+                </td>
+            </tr>
+            <p-dialog header="Add Test Case" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+                <div class="form">
+                    <label for="Input 1">Sample Input 1</label>
+                    <input pInputText id="Input 1" placeholder="Input 1" required title="Input 1"/>
+                    <label for="Input 2">Sample Input 2</label>
+                    <input pInputText id="Input 2"  placeholder="Input 2" required title="Input 2"/>
+                    <label for="Output">Sample Output</label>
+                    <input pInputText id="Output"  placeholder="Output" required title="Output"/>
+                    <p-button class="testcase">
+                       Execute
+                    </p-button>
+                </div>
+            </p-dialog>
+        </ng-template>
+    </p-table>
+</div>

@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+*{
+    font-family: noto sans;
+    margin: 0px;
+}
+body{
+    background: url('https://img.freepik.com/free-vector/pastel-abstract-nebula_91008-229.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

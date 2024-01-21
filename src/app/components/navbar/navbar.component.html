@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="right">
+    <img  class='logo'src="https://t4.ftcdn.net/jpg/01/63/91/51/360_F_163915196_rpszYhZQ3iGWlh32rxFIEQs3iTROCmKu.jpg" alt=""> 
+    <h3>{{title|uppercase}}</h3>
+  </div>
+ <div class="left">
+    <a [routerLink]="''">
+        <i class="pi pi-sign-out"></i>
+        Logout
+      </a>
+      <a [routerLink]="['/home']" *ngIf="dashboard">
+        <i class="pi pi-home"></i>
+        Home
+      </a>
+ </div>
+</div>

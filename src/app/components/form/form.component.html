@@ -1,0 +1,13 @@
+<p-toast></p-toast>
+<div class="container">
+    <div class="heading">
+        <h2>Test Case Management System</h2>
+    </div>
+    <div class="form">
+        <label for="username">Username</label>
+        <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="userName" placeholder="Your Name" required title="Username is required" />
+        <label for="password">Password</label>
+        <p-password [(ngModel)]="Password" [toggleMask]="true" placeholder="Your Password" required title="password is required" ></p-password>
+        <p-button label="Login" severity="secondary" (click)="submit()" class="login" type="button" ></p-button>
+    </div>
+</div>
