@@ -14,8 +14,15 @@ export interface TestCase {
     projectEntity: number;
   }
   
+// export interface Project {
+//     id: number;
+//     projectTitle: string;
+//     description: string;
+// }
 export interface Project {
-    id: number;
-    projectTitle: string;
-    description: string;
-  }
+  id: number;
+  projectTitle: string;
+  description: string;
+  loginEntity: LoginEntity;
+  testCases: TestCase[];
+}

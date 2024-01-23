@@ -19,7 +19,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { TestcasesComponent } from './components/testcases/testcases.component';
 import { ChartModule } from 'primeng/chart';
-import { LogoutComponent } from './components/logout/logout.component';
 import { CardModule } from 'primeng/card';
 import {HttpClientModule} from'@angular/common/http';
 import { Toast, ToastModule } from 'primeng/toast';
@@ -36,7 +35,7 @@ import { MessageService } from 'primeng/api';
     DashboardComponent,
     ChartComponent,
     TestcasesComponent,
-    LogoutComponent
+    
 
   ],
   imports: [

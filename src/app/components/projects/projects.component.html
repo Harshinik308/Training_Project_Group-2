@@ -14,18 +14,18 @@
                     {{rowData[col]}}
                 </td>
                 <td>
-                    <button type='button'pButton pRipple class="p-button-text p-button-rounded" [icon]="'pi pi-plus'" (click)="showDialog()"></button>
+                    <button type='button'pButton pRipple class="p-button-text p-button-rounded" [icon]="'pi pi-plus'" (click)="showDialog(rowData['id'])"></button>
                 </td>
             </tr>
             <p-dialog header="Add Test Case" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
                 <div class="form">
                     <label for="Input 1">Sample Input 1</label>
-                    <input pInputText id="Input 1" placeholder="Input 1" required title="Input 1"/>
+                    <input pInputText id="Input 1" placeholder="Input 1" required title="Input 1" [(ngModel)]="postData.input1"/>
                     <label for="Input 2">Sample Input 2</label>
-                    <input pInputText id="Input 2"  placeholder="Input 2" required title="Input 2"/>
+                    <input pInputText id="Input 2"  placeholder="Input 2" required title="Input 2" [(ngModel)]="postData.input2"/>
                     <label for="Output">Sample Output</label>
-                    <input pInputText id="Output"  placeholder="Output" required title="Output"/>
-                    <p-button class="testcase">
+                    <input pInputText id="Output"  placeholder="Output" required title="Output"[(ngModel)]="postData.result"/>
+                    <p-button class="testcase" (click)="postTestCase()">
                        Execute
                     </p-button>
                 </div>

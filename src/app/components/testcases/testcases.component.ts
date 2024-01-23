@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TestCase } from 'src/app/models/interfaces';
+import { Project, TestCase } from 'src/app/models/interfaces';
 
 @Component({
   selector: 'app-testcases',
@@ -9,6 +9,7 @@ import { TestCase } from 'src/app/models/interfaces';
 export class TestcasesComponent {
 @Input()id:any;
 @Input()products:TestCase[]=[];
+
 headers=[
   'Input 1','Input 2','Result','Status'
 ];
@@ -16,19 +17,22 @@ cols:any=[
   "input1", "input2", "result", "status"
 
 ]
-
+ngOnInit(){
+  
+}
 getStatusColor(status:string):string{
 switch(status){
-  case 'Passed':
+  case 'SUCCESS':
     return 'green';
-  case 'Failed':
+  case 'FAILURE':
     return 'red';
-  case 'Blocked':
+  case 'BLOCKED':
     return 'blue';
-  case 'Not Executed':
+  case 'NOT_EXECUTED':
     return 'magenta';
   default:
     return 'black';
+ }
 }
-}
+
 }
