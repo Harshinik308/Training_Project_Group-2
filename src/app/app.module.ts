@@ -23,6 +23,7 @@ import { CardModule } from 'primeng/card';
 import {HttpClientModule} from'@angular/common/http';
 import { Toast, ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { NgxLoadingModule } from "ngx-loading";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MessageService } from 'primeng/api';
     ChartModule,
     CardModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    NgxLoadingModule.forRoot({})
     
   ],
   providers: [MessageService],

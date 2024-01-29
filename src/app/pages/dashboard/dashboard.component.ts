@@ -1,7 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { error } from 'cypress/types/jquery';
 import { Project, TestCase } from 'src/app/models/interfaces';
 import { ApiService } from 'src/app/services/api.service';
+import { LoaderService } from 'src/app/services/loader.service';
+import { ToasterService } from 'src/app/services/toaster.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +12,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-constructor(private activatedRoute:ActivatedRoute,private api:ApiService){}
+constructor(private activatedRoute:ActivatedRoute,private api:ApiService,public loader:LoaderService,private alert:ToasterService){}
 id:any;
 projects:Project[]=[];
 project:Project[]=[];
@@ -34,8 +37,10 @@ getId(){
 
 
 fetchProjectDetails(){
+  this.loader.showLoader();
   this.api.fetchProjectDetails().subscribe({
     next:(response:any)=>{
+      this.loader.hideLoader();
       this.projects=response;
       this.getSpecificData();
       this.projectTitle=this.project[0].projectTitle;
@@ -45,6 +50,10 @@ fetchProjectDetails(){
       console.log(this.data);
       
       
+    },
+    error:(error)=>{
+      this.loader.hideLoader();
+      this.alert.errorAlert();
     }
   })
 }
